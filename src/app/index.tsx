@@ -44,6 +44,12 @@ export default function Index() {
           <Text className="text-base font-semibold text-white">Open Onboarding</Text>
         </Pressable>
       </Link>
+
+      <Link href="/language-selection" asChild>
+        <Pressable className="mt-4 rounded-3xl bg-white/10 px-6 py-3">
+          <Text className="text-base font-semibold text-white">Choose Language</Text>
+        </Pressable>
+      </Link>
     </View>
   );
 }
