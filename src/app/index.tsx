@@ -1,14 +1,21 @@
-import { Text, View } from "react-native";
+import { Link } from "expo-router";
+import { Pressable, Text, View } from "react-native";
 
 export default function Index() {
   return (
     <View className="flex-1 items-center justify-center bg-slate-950 px-6">
-      <Text className="text-center text-2xl font-semibold text-white">
-        ESMAS's HOMES
+      <Text className="text-center text-3xl font-bold text-white">
+        ESMA's EHR
       </Text>
       <Text className="mt-3 text-center text-sm text-slate-300">
         Welcome to ESMA's EHR Systems
       </Text>
+
+      <Link href="/onboarding" asChild>
+        <Pressable className="mt-8 rounded-3xl bg-cyan-500 px-6 py-4 shadow-lg shadow-cyan-500/20">
+          <Text className="text-base font-semibold text-white">Open Onboarding</Text>
+        </Pressable>
+      </Link>
     </View>
   );
 }
