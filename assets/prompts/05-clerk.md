@@ -6,13 +6,9 @@ Keep the existing UI and navigation flow intact. Implement email-based Sign Up, 
 
 After successful verification/authentication, navigate to the home route (/). If not authenticated, show onboarding route (/onboarding(. If authenticated, show home route (/). 
 
-Do not change the screen design. If there is any need, ask me before implementation
+Do not change the screen design. If there is any need, ask me before implementation.
 
 ---
-
-# Expo Quickstart
-
-**Example Repository**
 
 # Expo Quickstart
 
