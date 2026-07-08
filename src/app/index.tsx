@@ -1,9 +1,37 @@
-import { Link } from "expo-router";
+import { useAuth } from "@clerk/expo";
+import { Link, useRouter } from "expo-router";
+import { useEffect } from "react";
 import { Pressable, Text, View } from "react-native";
 
 export default function Index() {
+  const router = useRouter();
+  const { isLoaded, isSignedIn, signOut } = useAuth();
+
+  useEffect(() => {
+    if (isLoaded && !isSignedIn) {
+      router.replace("/sign-in");
+    }
+  }, [isLoaded, isSignedIn, router]);
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+    } catch (error) {
+      console.error("Sign out failed:", error);
+    }
+  };
+
   return (
     <View className="flex-1 items-center justify-center bg-slate-950 px-6">
+      {isLoaded && isSignedIn ? (
+        <Pressable
+          onPress={handleSignOut}
+          className="absolute right-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2"
+        >
+          <Text className="text-sm font-semibold text-white">Sign Out</Text>
+        </Pressable>
+      ) : null}
+
       <Text className="text-center text-3xl font-bold text-white">
         ESMA's EHR
       </Text>
